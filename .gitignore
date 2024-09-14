@@ -1,0 +1,12 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/odyssey-intro-hotchocolate/.vs/Odyssey.MusicMatcher/CopilotIndices/0.2.1627.58842
+/odyssey-intro-hotchocolate/.vs/Odyssey.MusicMatcher/DesignTimeBuild
+/odyssey-intro-hotchocolate/.vs/Odyssey.MusicMatcher/FileContentIndex
+/odyssey-intro-hotchocolate/.vs/Odyssey.MusicMatcher/v17
+/.vs/apollographql/v17
+/odyssey-intro-hotchocolate/.vs/Odyssey.MusicMatcher/config
+/odyssey-intro-hotchocolate/.config
+/odyssey-intro-hotchocolate/Odyssey.MusicMatcher.csproj.user
