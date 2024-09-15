@@ -11,6 +11,7 @@ builder
 builder.Services
     .AddGraphQLServer()
     .AddQueryType<Query>()
+    .AddMutationType<Mutation>()
     .RegisterService<SpotifyService>();
 
 builder
