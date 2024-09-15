@@ -27,5 +27,12 @@ namespace Odyssey.MusicMatcher.Types
             Name = obj.Name;
             Description = obj.Description;
         }
+
+        public Playlist(SpotifyWeb.Playlist playlist)
+        {
+            Id = playlist.Id;
+            Name = playlist.Name;
+            Description = playlist.Description;
+        }
     }
 }

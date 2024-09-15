@@ -13,5 +13,12 @@ namespace Odyssey.MusicMatcher
             var playlists = response.Playlists.Items.Select(playlist => new Playlist(playlist));
             return playlists.ToList();
         }
+
+        [GraphQLDescription("Retrieves a specific playlist.")]
+        public async Task<Playlist>? GetPlaylist([ID] string id, SpotifyService spotifyService)
+        {
+            var response = await spotifyService.GetPlaylistAsync(id);
+            return new Playlist(response);
+        }
     }
 }
