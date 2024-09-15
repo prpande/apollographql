@@ -15,6 +15,9 @@ namespace Odyssey.MusicMatcher.Types
         [GraphQLDescription("Describes the playlist, what to expect and entices the user to listen.")]
         public string? Description { get; set; }
 
+        [GraphQLDescription("The playlist's tracks.")]
+        public List<Track> Tracks { get; set; }
+
         public Playlist(string id, string name)
         {
             Id = id;
@@ -33,6 +36,7 @@ namespace Odyssey.MusicMatcher.Types
             Id = playlist.Id;
             Name = playlist.Name;
             Description = playlist.Description;
+            Tracks = playlist.Tracks.Items.Select(item => new Track(item.Track)).ToList();
         }
     }
 }
