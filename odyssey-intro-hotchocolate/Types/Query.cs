@@ -1,18 +1,17 @@
 ﻿using Odyssey.MusicMatcher.Types;
+using SpotifyWeb;
+using Playlist = Odyssey.MusicMatcher.Types.Playlist;
 
 namespace Odyssey.MusicMatcher
 {
     public class Query
     {
         [GraphQLDescription("Playlists hand-picked to be featured to all users.")]
-        public List<Playlist> FeaturedPlaylists()
+        public async Task<List<Playlist>> FeaturedPlaylists(SpotifyService spotifyService)
         {
-            return new List<Playlist>
-            {
-                new Playlist("1", "GraphQL Groovin'"),
-                new Playlist("2", "Graph Explorer Jams"),
-                new Playlist("3", "Interpretive GraphQL Dance")
-            };
+            var response = await spotifyService.GetFeaturedPlaylistsAsync();
+            var playlists = response.Playlists.Items.Select(playlist => new Playlist(playlist));
+            return playlists.ToList();
         }
     }
 }
